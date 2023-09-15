@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../README-Generator"
+		},
+		{
+			"path": "../../Bootcamp /TDM-VIRT-FSF-PT-06-2023-U-LOLC"
+		},
+		{
+			"path": "../SVG-Logo-Maker"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TDM-VIRT-FSF-PT-06-2023-U-LOLC"
+	}
+}
