@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/main.css" rel="stylesheet">
+    <link href="../public/css/main-build.css" rel="stylesheet">
+    <title>Travelifico</title>
+</head>
+
+
+<body class="bg-gray-100">
+    <!-- Barra de navegación (puede variar según tus necesidades) -->
+    <nav class="bg-blue-500 p-4 text-white">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Travelifico</h1>
+            <ul class="mt-4 space-x-4">
+                <li class="inline-block"><a href="/">Inicio</a></li>
+                <li class="inline-block"><a href="/most-popular">Más Populares</a></li>
+                <li class="inline-block"><a href="/signin">Iniciar Sesión</a></li>
+                <li class="inline-block"><a href="/check-points">Ver Puntos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container mx-auto p-4">
+        {{{body}}} <!-- Aquí se incluirá el contenido de las vistas -->
+    </div>
+
+    <!-- Pie de página (puede variar según tus necesidades) -->
+    <footer class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto text-center">
+            &copy; {{year}} Travelifico
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
