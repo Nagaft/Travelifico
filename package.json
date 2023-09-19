@@ -1,0 +1,32 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postcss": "npx postcss ./public/css/main.css --use autoprefixer -o ./public/css/main-build.css  --watch --verbose",
+    "styles": "npx tailwindcss -i ./public/css/main.css -o ./public/css/main-build.css --watch --verbose",
+    "seeds": "node seeds/server.js",
+    "passwordReset": "node passwordReset"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "autoprefixer": "^10.4.15",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.7.8",
+    "mysql2": "^2.1.0",
+    "postcss": "^8.4.29",
+    "postcss-nested": "^6.0.1",
+    "sequelize": "^5.21.5",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0"
+  }
+}
