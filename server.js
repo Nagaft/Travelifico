@@ -4,7 +4,6 @@ const sequelize =require('./config/connection');
 const controllers = require('./controllers');
 const exphbs = require('express-handlebars');
 const userRoutes = require('./controllers/api/userRoutes');
-const routes = require('./controllers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

@@ -7,6 +7,7 @@ const { User } = require('../models'); // Import your User model
 
 // Define the route for displaying the login form
 router.get('/login', (req, res) => {
+  
   res.sendFile(__dirname + '/views/login.html'); // Adjust the path to your HTML file
 });
 
