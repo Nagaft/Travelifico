@@ -1,17 +1,13 @@
 const path = require('path');
 const express = require('express');
+const sequelize =require('./config/connection');
 const controllers = require('./controllers');
 const exphbs = require('express-handlebars');
 const userRoutes = require('./controllers/api/userRoutes');
-
 const routes = require('./controllers');
-const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const puerto = 3001
-
-const sequelize = require('./config/connection');
 
 const hbs = exphbs.create({});
 
@@ -27,7 +23,3 @@ app.use(controllers);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port:  http://localhost:${PORT}`));
 });
-
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
