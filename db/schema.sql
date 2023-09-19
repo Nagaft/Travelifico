@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS Travel_db;
-CREATE DATABASE Travel_db;
