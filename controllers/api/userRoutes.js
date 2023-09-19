@@ -1,56 +1,55 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../../models/User');
+const router = require('express').Router();
+const { User } = require('../../models');
 
-router.get('../create-account', (req, res) => {
-  res.sendFile(__dirname + '../views/register.html');
-});
-console.log(User)
-
-router.post('/register', async (req, res) => {
+//CREATE NEW USER
+router.post('/', async (req, res) => {
   try {
-    // const { email, password } = req.body;
-    // console.log('registro exitoso');
-const userData =  await User.create(req.body);
-console.log (userData);
+    const userData = await User.create(req.body);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+//LOGIN SESSION
+router.post('/login', async (req, res) => {
+  try{
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+    if (!dbUserData) {
+      res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+    const validPassword = await dbUserData.checkPassword(req.body.password);  
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    };
+    
+    req.session.save(() => {
+      req.session.logged_in = true;
 
-res.status(200).json(userData);
-    // res.redirect('/success');
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Registration failed. Please try again.');
+      res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+    }); } catch (err) {
+    res.status(500).json(err);   
   }
 });
 
-// router.get('/reset-password', (req, res) => {
-//   res.render('reset-password', { resetLink: `${baseURL}/reset-password` });
-// });
-
-// router.post('/reset-password', async (req, res) => {
-//   const userEmail = req.body.email;
-
-//   const resetToken = crypto.randomBytes(20).toString('hex');
-  
-//   // Store the reset token and associated email in your database
-//   // (You'll need a database for this)
-
-//   const resetLink = `${baseURL}/reset-password/${resetToken}`;
-
-//   const msg = {
-//     to: userEmail,
-//     from: 'travelificoagency@gmail.com', // Replace with your sender email
-//     subject: 'Password Reset',
-//     html: `Click <a href="${resetLink}">here</a> to reset your password.`,
-//   };
-
-//   try {
-//     await sgMail.send(msg);
-//     console.log('Password reset email sent');
-//     res.redirect('/login');
-//   } catch (error) {
-//     console.error('Error sending email:', error);
-//     res.status(500).send('Internal Server Error');
-//   }
-// });
+//LOGOUT SESSION
+router.post('/logout', (req, res) => {
+ if (req.session.logged_in) {
+  req.session.destroy(() => {
+    res.status(204).end();
+  });
+} else {
+  res.status(404).end();
+}
+});
 
 module.exports = router;
