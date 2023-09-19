@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="form-side">
+            <a href="#" title="Logo">
+                <img src="" class='logo' alt="Ofin">
+            </a>
+            <form class="my-form" id="login-form" action="/login" method="POST">
+                <div class="form-welcome-row">
+                    <h1>Login to Your Account &#x1F44F;</h1>
+                </div>
+                <div class="text-field">
+                    <label for="email">Email:
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="off"
+                            placeholder="Your Email"
+                            required>
+                    </label>
+                </div>
+                <div class="text-field">
+                    <label for="password">Password:
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="Your Password"
+                            required>
+                    </label>
+                </div>
+                <button type="submit" class="my-form__button">
+                    Login
+                </button>
+                <div class="my-form__actions">
+                    <a href="/reset-password" title="Forgot Password">
+                        Forgot Password?
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="info-side">
+            <img src="../public/assets/mock.png" alt="Mock" class="mockup">
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
