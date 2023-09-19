@@ -37,6 +37,10 @@ Search.init(
             type: DataTypes.STRING,
             timestamps: false,
 
+        },
+        restaurant:{
+            type: DataTypes.STRING,
+            allowNull: false,
         }
 
     },

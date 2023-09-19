@@ -5,6 +5,7 @@ const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const puerto = 3001
 
 const sequelize = require('./config/connection');
 
@@ -22,7 +23,7 @@ app.use(require('./controllers'));
 app.use('/', userRoutes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening on port: 3001'));
+  app.listen(PORT, () => console.log(`Now listening on port:  http://localhost:${PORT}`));
 });
 
 app.listen(PORT, () => {
