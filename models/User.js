@@ -26,20 +26,16 @@ User.init(
       allowNull: false,
       validate: {
         len: [8],
-        is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
       },
     },
-    resetToken: {
-      type: DataTypes.STRING,
-    },
-    resetTokenExpiration: {
-      type: DataTypes.DATE,
-  },
- 
+  }, 
+
+  {
     sequelize,
     modelName: 'user',
-    timestamps: false, 
-    underscored: true, 
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
   }
 );
 

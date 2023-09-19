@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reset Password</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/reset-password.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
 </head>
 <body>
     <div class="form-wrapper">
@@ -12,9 +12,9 @@
             <a href="#" title="Logo">
                 <img src="" class='logo' alt="Ofin">
             </a>
-            <form class="my-form" id="reset-password-form" action="/reset-password" method="POST">
+            <form class="my-form" id="login-form" action="/login" method="POST">
                 <div class="form-welcome-row">
-                    <h1>Reset Your Password &#x1F44F;</h1>
+                    <h1>Login to Your Account &#x1F44F;</h1>
                 </div>
                 <div class="text-field">
                     <label for="email">Email:
@@ -27,12 +27,22 @@
                             required>
                     </label>
                 </div>
+                <div class="text-field">
+                    <label for="password">Password:
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="Your Password"
+                            required>
+                    </label>
+                </div>
                 <button type="submit" class="my-form__button">
-                    Reset Password
+                    Login
                 </button>
                 <div class="my-form__actions">
-                    <a href="/routes/passwordReset.js" title="Back to Login">
-                        Back to Login
+                    <a href="/reset-password" title="Forgot Password">
+                        Forgot Password?
                     </a>
                 </div>
             </form>

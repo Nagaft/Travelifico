@@ -8,7 +8,8 @@
     "postcss": "npx postcss ./public/css/main.css --use autoprefixer -o ./public/css/main-build.css  --watch --verbose",
     "styles": "npx tailwindcss -i ./public/css/main.css -o ./public/css/main-build.css --watch --verbose",
     "seeds": "node seeds/server.js",
-    "passwordReset": "node passwordReset"
+    "passwordReset": "node passwordReset",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
