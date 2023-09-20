@@ -35,5 +35,5 @@ User.init(
     underscored: true,
   }
 );
-
+//comments
 module.exports = User;
