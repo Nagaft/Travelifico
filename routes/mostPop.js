@@ -6,4 +6,4 @@ router.get('/', async (req, res, next) => {
     res.render('./views/mostPop.handlebars', { title: 'Most Popular'})
     });
 
-
+module.exports = router;
