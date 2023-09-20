@@ -56,8 +56,6 @@ app.post("/reset-password", (req, res) => {
     // Respond to the client
     res.json({ success: true });
 });
-
-=
 // Start the Express server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

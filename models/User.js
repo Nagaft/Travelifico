@@ -43,6 +43,8 @@ User.init(
         return newUserData;
       }
     },
+    {
+ main
     sequelize,
     modelName: 'user',
     timestamps: false,
@@ -50,5 +52,5 @@ User.init(
     underscored: true,
   }
 );
-
+//comments
 module.exports = User;
