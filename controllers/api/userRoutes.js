@@ -1,26 +1,44 @@
-const express = require('express');
-const router = express.Router();
-const User = require('../../models/User');
+const router = require('express').Router();
+const { User } = require('../../models');
 
-router.get('../create-account', (req, res) => {
-  res.sendFile(__dirname + '../views/register.html');
-});
-console.log(User)
-
-router.post('/register', async (req, res) => {
+//CREATE NEW USER
+router.post('/', async (req, res) => {
   try {
-    // const { email, password } = req.body;
-    // console.log('registro exitoso');
-const userData =  await User.create(req.body);
-console.log (userData);
-
-res.status(200).json(userData);
-    // res.redirect('/success');
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Registration failed. Please try again.');
+    const userData = await User.create(req.body);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
+//LOGIN SESSION
+router.post('/login', async (req, res) => {
+  try{
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+    if (!dbUserData) {
+      res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+    const validPassword = await dbUserData.checkPassword(req.body.password);  
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    };
+    
+    req.session.save(() => {
+      req.session.logged_in = true;
 
+      res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+    }); } catch (err) {
+    res.status(500).json(err);   
+  }
+});
 
 module.exports = router;

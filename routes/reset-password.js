@@ -1,3 +1,4 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
@@ -14,12 +15,10 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-// Generate a random alphanumeric token
 function generateResetToken() {
     const length = 20; // Adjust the length of the token as needed
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let resetToken = "";
-
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let resetToken = '';
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
         resetToken += characters.charAt(randomIndex);
@@ -58,8 +57,10 @@ app.post("/reset-password", (req, res) => {
     res.json({ success: true });
 });
 
+=
 // Start the Express server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
