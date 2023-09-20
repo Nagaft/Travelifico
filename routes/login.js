@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
     // Check the user's credentials (e.g., validate email and password)
 
     // If login is successful, you can redirect to a dashboard or user profile page
-    res.redirect('/dashboard');
+    res.redirect('/profile');
   } catch (error) {
     // Handle login errors (e.g., invalid credentials)
     res.status(401).send('Login failed. Please check your credentials.');
