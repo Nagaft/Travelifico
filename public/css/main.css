@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.buttons {
+    padding: 0.5rem 1rem; /* px-4 py-2 en Tailwind */
+    background-color: #3b82f6; /* bg-blue-500 en Tailwind */
+    color: #fff; /* text-white en Tailwind */
+    border-radius: 0.375rem; /* rounded-md en Tailwind */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buttons:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 en Tailwind */
+}
+
+.buttons:focus {
+    outline: none; /* focus:outline-none en Tailwind */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* focus:ring focus:ring-blue-200 en Tailwind */
+}
