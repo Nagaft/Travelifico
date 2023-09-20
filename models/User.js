@@ -36,9 +36,7 @@ User.init(
       validate: {
         is: /^\d{10}$/ // Use the "is" validation for custom regular expression validation
       },
-    },
-  }, 
-  {
+    }, 
     hooks: {
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
