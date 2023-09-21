@@ -1,6 +1,6 @@
 const router = require('express').Router();
 router.get('/', (req, res) => {
-  console.log(rec.yelpinfo)
+  console.log(req.yelpinfo)
     res.render('home'); // Adjust the path to your HTML file
   });
 
