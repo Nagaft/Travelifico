@@ -1,8 +1,10 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Sequelize, DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/connection'); // Asegúrate de importar la instancia de Sequelize correctamente desde tu archivo de conexión
 const bcrypt = require('bcrypt');
 
-class User extends Model {}
+const User = sequelize.define('User', {
+  // Define tus atributos de modelo aquí
+});
 
 User.init(
   {
