@@ -1,7 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection'); // Asegúrate de importar la instancia de Sequelize correctamente desde tu archivo de conexión
 
-class User extends Model {}
+const User = sequelize.define('User', {
+  // Define tus atributos de modelo aquí
+});
 
 User.init(
   {
