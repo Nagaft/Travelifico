@@ -25,7 +25,8 @@
     "mysql2": "^2.2.5",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
