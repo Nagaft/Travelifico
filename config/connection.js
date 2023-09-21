@@ -1,5 +1,3 @@
-
-
 // connection.js
 const Sequelize = require('sequelize');
 
