@@ -1,13 +1,18 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
-const sequelize = require('../config/connection'); // Asegúrate de importar la instancia de Sequelize correctamente desde tu archivo de conexión
+const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
-
-// const User = sequelize.define('User', {
-//   // Define tus atributos de modelo aquí
-// });
-
-class User extends Model{}
-
+class User extends Model {
+  async comparePassword(password) {
+    // try {
+    //   const isMatch = await bcrypt.compare(password, this.password);
+    //   return isMatch;
+    // } catch (error) {
+    //   console.error('Error comparing passwords:', error);
+    //   throw error;
+    // }
+    return bcrypt.compareSync(password, this.password);
+  }
+}
 User.init(
   {
     id: {
@@ -28,31 +33,29 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8], // Ensure the password is at least 8 characters long
+       len: [8], // Ensure the password is at least 8 characters long
       },
     },
     phoneNumber: {
-      type: DataTypes.STRING, // Use DataTypes.STRING for phone numbers
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        is: /^\d{10}$/, // Use the "is" validation for custom regular expression validation for phone numbers
+        is: /^\d{10}$/, // Custom regular expression validation for phone numbers
       },
-    }, 
+    },
   },
   {
-
     hooks: {
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
     },
-    sequelize, // Use the sequelize instance you imported
-    modelName: 'user', // Set the model name
-    timestamps: false, // Disable timestamps (createdAt and updatedAt columns)
-    freezeTableName: true, // Use the model name as the table name
-    underscored: true, // Use snake_case for column names
+    sequelize,
+    modelName: 'user',
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
   }
 );
-
 module.exports = User;
