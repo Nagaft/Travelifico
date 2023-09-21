@@ -1,36 +1,14 @@
 const router = require('express').Router();
 const {User} = require('../models');
 const express = require ('express');
-const session = require('express-session');
 const withAuth = require('../utils/auth');  
 //const app = express();
 router.get('/create-account',(req,res) =>{
   res.render('create-account')
 });
 router.get('/', (req, res) => {
-  console.log(req.yelpinfo)
     res.render('login'); // Adjust the path to your HTML file
   });
-
-  //with auth all users 
-  router.get('/', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['email', 'ASC']],
-      });
-      const users = userData.map((project) => project.get({ plain: true }));
-      res.render('/', {
-        users,
-        logged_in: req.session.logged_in,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  router.get('/login',(req,res) =>{
-    res.render('login')
-  })
 
   //CREATE NEW USER
   router.post('/create-account', async (req, res) => {
@@ -51,6 +29,28 @@ router.get('/', (req, res) => {
     }
   });
 
+  //with auth all users 
+  router.get('/login', withAuth, async (req, res) => {
+    try {
+      const userData = await User.findAll({
+        attributes: { exclude: ['password'] },
+        order: [['email', 'ASC']],
+      });
+      const users = userData.map((project) => project.get({ plain: true }));
+      res.render('login', {
+        users,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  router.get('/',(req,res) =>{
+    res.render('login')
+  });
+
+  
+
   //LOGIN
   router.post('/login', async (req, res) => {
     const userpswd = req.body.password;
@@ -62,13 +62,16 @@ router.get('/', (req, res) => {
     }
     const isPassValid = await user.comparePassword(userpswd);
     if (!isPassValid) {
-      return res.status(400).json({ message: 'Incorrect password. Please try again!' });
+      // return res.status(400).json({ message: 'Incorrect password. Please try again!' });
+      return;
     }
     req.session.save(() => {
       req.session.user_id = user.id;
       req.session.logged_in = true;
       res.status(200).json({ user: user, message: 'You are now logged in!' });
     });
+
+
   }
   catch (error) {
     console.error('Login failed:', error);
@@ -84,12 +87,12 @@ router.get('/', (req, res) => {
 //   }
 // });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/create-account');
     return;
   }
-  res.render('login');
+  //res.render('login');
 });
 
   module.exports = router;
