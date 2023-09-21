@@ -15,11 +15,7 @@ router.post('/create-account', async (req, res) => {
       phoneNumber: phoneNumber
     });
     
-    // Generate a verification code and send it via SMS (using your API)
-    const verificationCode = generateVerificationCode();
 
-    // Redirect to the validation page with the verification code as a query parameter
-    res.redirect(`/validate?code=${verificationCode}`);
   } catch (error) {
     console.error('Account creation failed:', error);
     res.status(500).send('Account creation failed. Please try again.');
@@ -53,14 +49,6 @@ router.post('/login', async (req, res) => {
     console.error('Login failed:', error);
     res.status(500).json(error);
   }
-});
-
-// Define the route for handling phone number verification
-router.get('/validate', (req, res) => {
-  const verificationCode = req.query.code; // Get the verification code from the query parameter
-
-  // Render the validation page with the verification code
-  res.render('validation', { verificationCode });
 });
 
 module.exports = router;
