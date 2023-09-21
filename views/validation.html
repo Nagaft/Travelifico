@@ -1,10 +1,11 @@
+<!-- validation.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reset Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/public/css/reset-password.css">
+    <title>Phone Number Verification</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file if needed -->
 </head>
 <body>
     <div class="form-wrapper">
@@ -12,35 +13,30 @@
             <a href="#" title="Logo">
                 <img src="" class='logo' alt="Ofin">
             </a>
-            <form class="my-form" id="reset-password-form" action="/reset-password" method="POST">
+            <form class="my-form" id="verification-form" action="/verify" method="POST">
                 <div class="form-welcome-row">
-                    <h1>Reset Your Password &#x1F44F;</h1>
+                    <h1>Verify Your Phone Number &#x1F4F5;</h1>
                 </div>
                 <div class="text-field">
-                    <label for="email">Email:
+                    <label for="verificationCode">Verification Code:
                         <input
-                            type="email"
-                            id="email"
-                            name="email"
+                            type="text"
+                            id="verificationCode"
+                            name="verificationCode"
                             autocomplete="off"
-                            placeholder="Your Email"
+                            placeholder="Enter Verification Code"
                             required>
                     </label>
                 </div>
                 <button type="submit" class="my-form__button">
-                    Reset Password
+                    Verify
                 </button>
-                <div class="my-form__actions">
-                    <a href="reset-password.js" title="Back to Login">
-                        Back to Login
-                    </a>
-                </div>
             </form>
         </div>
         <div class="info-side">
             <img src="../public/assets/mock.png" alt="Mock" class="mockup">
         </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="../script.js"></script> <!-- Include your JavaScript file if needed -->
 </body>
 </html>

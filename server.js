@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(controllers);
-app.use('/mostPop', mostPop);
+app.use('./mostPop', mostPop);
 app.use(session({
   key: 'user_id',
   secret: 'travelplans',
