@@ -6,30 +6,15 @@ const exphbs = require('express-handlebars');
 const userRoutes = require('./controllers/api/userRoutes');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const mostPop = require('./routes/mostPop');
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 const hbs = exphbs.create({});
-
-const sess = {
-  key: 'user_id',
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
-
-app.use(session(sess));
 
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,8 +29,11 @@ app.use('./mostPop', mostPop);
 //   cookie: {
 //     expires: 600000
 //   }
-
 // }))
-sequelize.sync({ force: false }).then(() => {
+app.listen(PORT, () => {
+});
+=======
+// }))
   app.listen(PORT, () => console.log(`Now listening on port:  http://localhost:${PORT}`));
 });
+>>>>>>> 61f00215cf9af6c4145064fa908a95b51f29c374

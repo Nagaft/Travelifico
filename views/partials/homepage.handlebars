@@ -5,6 +5,7 @@
     <div class="mb-4">
         <label for="city" class="block text-lg font-medium mb-2">Select a City:</label>
         <select id="city" name="city" class="border rounded-md py-2 px-3 w-full">
+            <option value="150800">CDMX</option>
             <!-- Populate options dynamically based on data -->
             {{#each cities}}
             <option value="{{this}}">{{this}}</option>
@@ -12,22 +13,44 @@
         </select>
     </div>
 
-    <!-- Select Travel Date -->
-    <div class="mb-4">
-        <label for="travelDate" class="block text-lg font-medium mb-2">Select a Travel Date:</label>
-        <input type="date" id="travelDate" name="travelDate" class="border rounded-md py-2 px-3 w-full">
-    </div>
-
-    <!-- Select Number of Persons -->
-    <div class="mb-4">
-        <label for="numPersons" class="block text-lg font-medium mb-2">Select Number of Persons:</label>
-        <input type="number" id="numPersons" name="numPersons" min="1" class="border rounded-md py-2 px-3 w-full">
-    </div>
-
     <!-- Select Favorite Food -->
     <div class="mb-4">
         <label for="favoriteFood" class="block text-lg font-medium mb-2">Select Favorite Food:</label>
         <select id="favoriteFood" name="favoriteFood" class="border rounded-md py-2 px-3 w-full">
+            <option value="1">Italian</option>
+            <option value="2">Mediterranean</option>
+            <option value="3">Contemporary</option>
+            <option value="4">Tuscan</option>
+            <option value="5">Mexican</option>
+            <option value="6">Seafood</option>
+            <option value="7">Grill</option>
+            <option value="8">Northern-Italian</option>
+            <option value="9">Southern-Italian</option>
+            <option value="10">Spanish</option>
+            <option value="11">Pub</option>
+            <option value="12">Fusion</option>
+            <option value="13">Gastropub</option>
+            <option value="14">Latin</option>
+            <option value="15">Healthy</option>
+            <option value="16">Barbecue</option>
+            <option value="17">Asian</option>
+            <option value="18">Thai</option>
+            <option value="19">Korean</option>
+            <option value="20">Japanese</option>
+            <option value="21">International</option>
+            <option value="22">Sushi</option>
+            <option value="23">Japanese Fusion</option>
+            <option value="24">Bar</option>
+            <option value="25">Greek</option>
+            <option value="26">Argentinean</option>
+            <option value="27">Steakhouse</option>
+            <option value="28">French</option>
+            <option value="29">European</option>
+            <option value="30">Romana</option>
+            <option value="31">Lazio</option>
+            <option value="32">Sicilian</option>
+            <option value="33">Central-Italian</option>
+            <option value="34">Wine Bar</option>
             <!-- Populate options dynamically based on data -->
             {{#each foodTypes}}
             <option value="{{this}}">{{this}}</option>
@@ -37,4 +60,490 @@
 
     <!-- Search Button -->
     <button id="searchBtn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full">Search</button>
+
+    <div class="container mx-auto p-4">
+    <ul class="grid grid-cols-4 gap-4">
+        <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/bd/13/fd/parole-polanco.jpg?w=3000&h=4000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Parole Polanco</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Italian,Mediterranean,Contemporary,Tuscan</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/4d/c4/af/caption.jpg?w=5300&h=3500&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Balta</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Seafood,Mediterranean,Grill</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/00/ab/32/zefiro.jpg?w=1100&h=1100&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Zefiro</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Contemporary</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/8f/70/3a/food-was-amazing-dish.jpg?w=2000&h=1500&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Auguri Kosher Trattoria</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Italian,Mediterranean,Contemporary,Northern-Italian,Southern-Italian</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/3c/99/63/instintivo-atrevido-indomable.jpg?w=8600&h=5700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Animal Masaryk</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Spanish,Pub,Fusion,Gastropub</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/33/86/ad/toreo.jpg?w=1900&h=1200&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Porfirio's Toreo</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Latin,Healthy</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/22/3f/9e/la-mansion.jpg?w=2000&h=1300&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">La Mansion Marriott Reforma Steakhouse</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Barbecue</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/2c/b5/75/coming-soon.jpg?w=2200&h=2200&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">KYU MÉXICO</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Asian,Thai,Korean,Fusion</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/ed/96/e1/udon-de-wagyu.jpg?w=800&h=800&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Ryoshi Masaryk</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Japanese,International,Sushi,Asian,Healthy,Japanese Fusion</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/27/09/e8/mochomos.jpg?w=1500&h=1500&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Mochomos Palmas</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/5c/d5/bc/ilios-polanco-el-autentico.jpg?w=1200&h=800&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Ilios Greek Estiatorio Polanco</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Bar,Mediterranean,Greek,Pub</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/d3/62/37/vive-un-viaje-mediterraneo.jpg?w=3400&h=2200&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Karpos Polanco </h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Italian,Mediterranean,Greek</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/4b/37/9f/terraza.jpg?w=1100&h=700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Cambalache Plaza Oasis</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Bar,International,Grill,Contemporary,Pub,Argentinean</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/e7/06/09/locacion-toreo.jpg?w=6000&h=4000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">La Vicenta Toreo</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Steakhouse,Latin,Bar,Barbecue,Grill</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/40/21/43/photo0jpg.jpg?w=2000&h=2000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Condimento Restaurant</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">International</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/b8/c0/e9/montparnasse.jpg?w=1600&h=1100&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Cityzen Rooftop Kitchen</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Fusion</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/b5/f0/3c/disfruta-de-cada-platillo.jpg?w=5500&h=3600&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Restaurante Condimento Emporio Reforma</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/57/2a/d3/interior.jpg?w=2500&h=1700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">La Rural Argentina</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Bar,International,Grill,Contemporary,Pub,Argentinean</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/e3/50/68/los-danzantes-es-un-espacio.jpg?w=1200&h=1200&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Los Danzantes Coyoacán</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Contemporary</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/75/be/ec/asaderos-grill-plaza.jpg?w=4000&h=3000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Asaderos Grill Plaza Carso</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,International,Grill</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/28/a8/15/tabp.jpg?w=1200&h=700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Taboo Polanco</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Seafood,International,Mediterranean,Contemporary</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/4a/97/1b/azul-70-mexican-restaurant.jpg?w=4000&h=3000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">La Distral</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican,Latin,International</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5b/7d/ff/caracoles-a-la-provenzal.jpg?w=1000&h=600&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Les Moustaches</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">French,Bar,International,Pub,Healthy</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/ea/8d/04/caption.jpg?w=3000&h=4000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Hotaru Mitikah</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Japanese</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/c8/97/bb/tomahawk.jpg?w=1200&h=800&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Cuerno Masaryk</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/e6/75/fd/porfirio-s-coyoacan.jpg?w=1200&h=600&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Porfirio's Coyoacán</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/c5/f2/4c/quattro-gastronomia-italiana.jpg?w=900&h=900&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Quattro</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Italian,Mediterranean,European,Healthy,Tuscan,Romana,Lazio,Sicilian,Central-Italian,Southern-Italian</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/10/d7/e6/caption.jpg?w=1500&h=2000&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Hotaru Arcos</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Japanese</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/8b/5b/74/terraza.jpg?w=900&h=600&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Corazon De Maguey</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Mexican</span></p>
+              </div>
+            </div>
+          </li>
+          
+
+          <li>
+            <div class="w-200 h-200 bg-white rounded-lg shadow-md">
+              <!-- Imagen del Restaurante -->
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/13/2f/43/rib-eye-black-angus.jpg?w=8600&h=5700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
+              <!-- Componente de Restaurante -->
+              <div class="p-4">
+                <!-- Nombre del Restaurante -->
+                <h1 class="text-2xl font-semibold mb-2">Colmillo Masaryk</h1>
+                
+                <!-- Tipos de Comida -->
+                <p class="text-gray-600">Tipos de Comida: <span class="text-black">Bar,Grill,Pub,Wine Bar</span></p>
+              </div>
+            </div>
+          </li>
+    </ul>
+  </div>
+
+
+
 </div>
