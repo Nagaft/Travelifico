@@ -1,18 +1,62 @@
-<div class="bg-white rounded-lg shadow-md p-4 m-4">
-    <h2 class="text-2xl font-semibold mb-2">¡Reserva Confirmada!</h2>
-    <p class="text-gray-600 mb-4">Tu reserva en <span class="font-semibold">{{restaurantName}}</span> ha sido confirmada.</p>
-    
-    <div class="mb-4">
-        <p class="text-sm text-gray-500">Detalles de la Reserva:</p>
-        <ul class="list-disc pl-6">
-            <li>Tu reserva está programada para: <span class="font-semibold">{{reservationTime}}</span></li>
-            <li>La dirección del restaurante es: <span class="font-semibold">{{restaurantAddress}}</span></li>
-        </ul>
-    </div>
+<div class="form-wrapper flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 p-8 md:p-0">
+  <div class="form-side flex-1 md:p-8">
+    <a href="#" title="Logo" class="mb-6">
+      <img src="" class="logo" alt="Ofin" />
+    </a>
+    <form
+      class="my-form max-w-md mx-auto"
+      id="create-account-form"
+      action="/create-account"
+      method="POST"
+    >
+      <div class="form-welcome-row mb-8">
+        <h1 class="text-3xl font-semibold">Create Your Account</h1>
+      </div>
+      <div class="text-field mb-4">
+        <label for="email" class="block text-gray-700 dark:text-white">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="off"
+          placeholder="Your Email"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+        />
+      </div>
+      <div class="text-field mb-4">
+        <label for="password" class="block text-gray-700 dark:text-white">Password:</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          placeholder="Your Password"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+        />
+      </div>
+      <div class="text-field mb-4">
+        <label for="phoneNumber" class="block text-gray-700 dark:text-white">Phone Number (10 digits):</label>
+        <input
+          id="phoneNumber"
+          type="tel"
+          name="phoneNumber"
+          pattern="[0-9]{10}"
+          placeholder="Your Phone Number (e.g., 1234567890)"
+          required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:border-blue-500"
+        />
+      </div>
 
-    <p class="text-green-500 font-semibold">¡Has ganado 300 puntos por reservar con Travelifico!</p>
-    
-    <div class="mt-4">
-        <a href="/checkPoints" class="text-blue-500 hover:underline">Verifica tus puntos acumulados</a>
-    </div>
+      <button type="submit" class="my-form__button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full">
+        Create Account
+      </button>
+      <div class="my-form__actions mt-4">
+        <a href="/login" title="Already have an account? Log in" class="text-blue-500 hover:underline">Already have an account? Log in</a>
+      </div>
+    </form>
+  </div>
+  <div class="info-side hidden md:block">
+    <img src="../public/assets/mock.png" alt="Mock" class="mockup" />
+  </div>
 </div>
