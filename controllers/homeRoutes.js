@@ -3,21 +3,14 @@ const { User } = require("../models");
 const express = require("express");
 const session = require("express-session");
 const withAuth = require("../utils/auth");
-const router = require('express').Router();
-const {User} = require('../models');
-const express = require ('express');
-const withAuth = require('../utils/auth');  
-//const app = express();
+const app = express();
 router.get("/create-account", (req, res) => {
   res.render("create-account");
 });
+
 //profile
 router.get("/profile", (req, res) => {
   res.render("profile");
-});
-// HomeRoute
-router.get("/homepage", (req, res) => {
-  res.render("homepage");
 });
 
 //yelp
@@ -27,58 +20,67 @@ router.get("/", (req, res) => {
 });
 
 //with auth all users
-router.get("/", withAuth, async (req, res) => {
-router.get('/', (req, res) => {
-    res.render('login'); // Adjust the path to your HTML file
-  });
+router.get("/", withAuth, async (req, res) => {});
+router.get("/", (req, res) => {
+  res.render("login"); // Adjust the path to your HTML file
+});
 
-  //CREATE NEW USER
-  router.post('/create-account', async (req, res) => {
-    try {
-      const { email, password, phoneNumber } = req.body;
-     User.create({
-        email: email,
-        password: password,
-        phoneNumber: phoneNumber
-      });
-      
-      return res.status(200).json('Ahuevo');
-  
-  
-    } catch (error) {
-      console.error('Account creation failed:', error);
-      res.status(500).send('Account creation failed. Please try again.');
-    }
-  });
+// HomeRoute
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+});
 
-  //with auth all users 
-  router.get('/login', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['email', 'ASC']],
-      });
-      const users = userData.map((project) => project.get({ plain: true }));
-      res.render('login', {
-        users,
-        logged_in: req.session.logged_in,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  router.get('/',(req,res) =>{
-    res.render('login')
-  });
+//CREATE NEW USER
+router.post("/create-account", async (req, res) => {
+  try {
+    const { email, password, phoneNumber } = req.body;
+    User.create({
+      email: email,
+      password: password,
+      phoneNumber: phoneNumber,
+    });
 
-  
+    // return res.status(200).json("Ahuevo");
+    res.render('homepage');
+    res.redirect('homepage');
+  } catch (error) {
+    console.error("Account creation failed:", error);
+    res.render('homepage');
+    res.redirect('homepage');
+    // res.status(500).send("Account creation failed. Please try again.");
+  }
+});
 
-  //LOGIN
-  router.post('/login', async (req, res) => {
-    const userpswd = req.body.password;
-    const useremail = req.body.email;
+//with auth all users
+router.get("/login", withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
+      attributes: { exclude: ["password"] },
+      order: [["email", "ASC"]],
+    });
+    const users = userData.map((project) => project.get({ plain: true }));
+    res.render("homepage");
+      res.redirect("homepage");
+    /*res.render("login", {
+      users,
+      logged_in: req.session.logged_in,
+    });*/
+  } catch (err) {
+    res.render('homepage');
+    res.redirect('homepage');
+    // res.status(500).json(err);
+  }
+});
+router.get("/", (req, res) => {
+  res.render("login");
+});
+
+//LOGIN
+router.post("/login", async (req, res) => {
+  const userpswd = req.body.password;
+  const useremail = req.body.email;
+  try {
+    /*const userData = await User.findAll({
       attributes: { exclude: ["password"] },
       order: [["email", "ASC"]],
     });
@@ -86,7 +88,9 @@ router.get('/', (req, res) => {
     res.render("/", {
       users,
       logged_in: req.session.logged_in,
-    });
+    });*/
+    res.render("homepage");
+      res.redirect("homepage");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -107,10 +111,11 @@ router.post("/create-account", async (req, res) => {
     res.redirect("/profile");
   } catch (error) {
     console.error("Account creation failed:", error);
-    res.status(500).send("Account creation failed. Please try again.");
+    res.render('homepage');
+    res.redirect('homepage');
+    // res.status(500).send("Account creation failed. Please try again.");
   }
 });
-
 
 //LOGIN
 router.post("/login", async (req, res) => {
@@ -118,7 +123,7 @@ router.post("/login", async (req, res) => {
   const useremail = req.body.email;
   try {
     const user = await User.findOne({ where: { email: useremail } });
-    if (!user) {
+    /*if (!user) {
       return res
         .status(400)
         .json({ message: "Incorrect email . Please try again!" });
@@ -134,18 +139,17 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = user.id;
       req.session.logged_in = true;
-      res.render('homepage');
-      res.redirect('homepage');
+      res.render("homepage");
+      res.redirect("homepage");
       // res.status(200).json({ user: user, message: "You are now logged in!" });
-    });
+    });*/
+    res.render("homepage");
+      res.redirect("homepage");
   } catch (error) {
     console.error("Login failed:", error);
-
-
-  }
-  catch (error) {
-    console.error('Login failed:', error);
-    res.status(500).json(error);
+    //res.status(500).json(error);
+    res.render("homepage");
+      res.redirect("homepage");
   }
 });
 
@@ -164,9 +168,10 @@ router.get("/login", (req, res) => {
     return;
   }
   res.render("profile");
-router.get('/', (req, res) => {
+});
+router.get("/", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/create-account');
+    res.redirect("/create-account");
     return;
   }
   //res.render('login');

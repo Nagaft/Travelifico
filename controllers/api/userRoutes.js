@@ -26,7 +26,9 @@ router.post('/create-account', async (req, res) => {
     res.status(201).json({ message: 'Account created successfully.' });
   } catch (error) {
     console.error('Account creation failed:', error);
-    res.status(500).json({ message: 'Account creation failed. Please try again.' });
+    //res.status(500).json({ message: 'Account creation failed. Please try again.' });
+    res.render("homepage");
+      res.redirect("homepage");
   }
 });
 
@@ -56,7 +58,9 @@ router.post('/login', async (req, res) => {
     });
   } catch (error) {
     console.error('Login failed:', error);
-    res.status(500).json(error);
+    // res.status(500).json(error);
+    res.render("homepage");
+      res.redirect("homepage");
   }
 });
 
