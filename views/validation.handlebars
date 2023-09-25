@@ -1,29 +1,32 @@
-<div class="form-wrapper">
-    <div class="form-side">
-        <a href="#" title="Logo">
-       </a>
-        <form class="my-form" id="verification-form" action="/verify" method="POST">
-            <div class="form-welcome-row">
-                <h1>Verify Your Phone Number &#x1F4F5;</h1>
+<div class="form-wrapper flex justify-between min-h-screen bg-gray-200 p-10">
+    
+    <div class="form-side w-1/2 flex flex-col justify-center">
+        <a href="/Travelifico/public/images/logot.png" title="Logo" class="mb-10">
+        </a>
+        <form class="my-form bg-white p-8 rounded-lg shadow-md" id="verification-form" action="/verify" method="POST">
+            <div class="form-welcome-row mb-6">
+                <h1 class="text-2xl font-semibold">Verify Your Phone Number &#x1F4F5;</h1>
             </div>
-            <div class="text-field">
-                <label for="verificationCode">Verification Code:
-                    <input
-                            type="text"
-                            id="verificationCode"
-                            name="verificationCode"
-                            autocomplete="off"
-                            placeholder="Enter Verification Code"
-                            required>
-                </label>
+            <div class="text-field mb-6">
+                <label for="verificationCode" class="block text-lg font-medium mb-2">Verification Code:</label>
+                <input
+                    type="text"
+                    id="verificationCode"
+                    name="verificationCode"
+                    autocomplete="off"
+                    placeholder="Enter Verification Code"
+                    class="border rounded-md py-2 px-3 w-full focus:border-blue-500"
+                    required>
             </div>
-            <button type="submit" class="my-form__button">
-                    Verify
+            <button type="submit" class="my-form__button bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full mb-6">
+                Verify
             </button>
         </form>
     </div>
-    <div class="info-side">
-        <img src="../public/images/logot.png" alt="Mock" class="mockup">
+
+    <div class="info-side w-1/2 flex justify-center items-center">
+        <img src="../public/images/logot.png" alt="Mock" class="mockup w-3/4 h-auto">
     </div>
 </div>
-<script src="../validation.js"></script> <!-- Include your JavaScript file if needed -->
+<script src="../validation.js"></script>
+
