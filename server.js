@@ -11,6 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
 
+
+
+
+
 const sess = {
   secret: 'travelplans',
   resave: false,
@@ -22,12 +26,14 @@ const sess = {
     expires: 60000
   }
 }
+
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/controllers')));
 app.use(cookieParser());
 app.use(controllers);
 app.listen(PORT, () => {

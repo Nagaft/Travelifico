@@ -8,6 +8,7 @@
   <title class="bg-gray-100">Travelifico</title>
 </head>
 <body class="bg-gray-100">
+
     
  {{> header}}
 
@@ -17,5 +18,9 @@
 
   {{> footer}}
  
+        {{#each scripts}}
+            <script src="{{this}}"></script>
+        {{/each}}
+
 </body>
 </html>

@@ -1,8 +1,8 @@
 // const loginForm = document.getElementById("my-form");
 // const loginButton = document.getElementById("my-form_button");
 
-loginForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
+// loginForm.addEventListener("submit", async function (event) {
+//   event.preventDefault();
 // const loginForm = document.getElementById('my-form');
 // const loginButton = document.getElementById('my-form_button');
 
@@ -25,19 +25,19 @@ loginForm.addEventListener("submit", async function (event) {
 //       body: JSON.stringify(formData), // Convert the data to JSON
 //     });
 
-    if (response.ok) {
-      window.location.href = "/profile"; // Redirect to the profile page
-      return;
-    } else {
-      console.error("Login failed. Please check your credentials.");
-    }
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
-});
-loginButton.addEventListener("click", function (event) {
-  loginForm.submit();
-});
+//     if (response.ok) {
+//       window.location.href = "/profile"; // Redirect to the profile page
+//       return;
+//     } else {
+//       console.error("Login failed. Please check your credentials.");
+//     }
+//   } catch (error) {
+//     console.error("An error occurred:", error);
+//   }
+// });
+// loginButton.addEventListener("click", function (event) {
+//   loginForm.submit();
+// });
 // loginForm.addEventListener('submit', async function (event) {
 //     event.preventDefault(); 
 

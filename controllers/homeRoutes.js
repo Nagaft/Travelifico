@@ -4,6 +4,8 @@ const { User } = require("../models");
 const withAuth = require("../utils/auth");
 const { compare } = require("bcrypt");
 
+const scripts = ['./api/tripadvisor.js'];
+
 
 router.get("/create-account", (req, res) => {
   res.render("create-account");
@@ -58,8 +60,12 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/homepage", withAuth, (req, res) => {
-  // Only authenticated users can access this route
-  res.render("homepage");
+  res.render("homepage",{
+    layout: 'main', 
+    title:'Travelifico',
+    scripts: scripts
+  }
+  );
 });
 
 router.get("/login", (req, res) => {
