@@ -35,7 +35,6 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-
 app.post('/verify-otp', (req, res) => {
     try {
       const { phoneNumber, userOTP } = req.body;
