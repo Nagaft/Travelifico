@@ -4,12 +4,17 @@
     <!-- Select City -->
     <div class="mb-4">
         <label for="city" class="block text-lg font-medium mb-2">Select a City:</label>
-        <select id="city" name="city" class="border rounded-md py-2 px-3 w-full">
-            <option value="150800">CDMX</option>
+        <input
+        type="text" 
+        id="city"
+        name="city" 
+        placeholder="Ciudad"
+        required=""
+         class="border rounded-md py-2 px-3 w-full">
             <!-- Populate options dynamically based on data -->
-            {{#each cities}}
+            {{!-- {{#each cities}}
             <option value="{{this}}">{{this}}</option>
-            {{/each}}
+            {{/each}} --}}
         </select>
     </div>
 
@@ -59,7 +64,7 @@
     </div>
 
     <!-- Search Button -->
-    <button id="searchBtn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full">Search</button>
+    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full" id ="holiwis">Search</button>
 
     <div class="container mx-auto p-4">
     <ul class="grid grid-cols-4 gap-4">
@@ -545,3 +550,7 @@
   </div>
 
 </div>
+
+ {{#each scripts}}
+            <script src="{{this}}"></script>
+        {{/each}}
