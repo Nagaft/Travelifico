@@ -7,7 +7,6 @@ const userRoutes = require('./controllers/api/userRoutes');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-// const mostPop = require('./routes/mostPop');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});

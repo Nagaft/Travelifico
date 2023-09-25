@@ -37,7 +37,7 @@ app.listen(port, () => {
 
 app.post('/verify-otp', (req, res) => {
     try {
-      const { phoneNumber, userOTP } = req.body;
+      const { phoneNumber, userOTP } = req.body.phoneNumber;
   
       const storedOTP = otpStorage[phoneNumber];
   
