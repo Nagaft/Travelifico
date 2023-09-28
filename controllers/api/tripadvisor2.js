@@ -12,7 +12,6 @@ import('node-fetch')
 
     const headers = {
       'X-RapidAPI-Key': '57e31448e3msh4e69f6c458e2cc3p1a56c8jsn30d59b107abb',
-      //'X-RapidAPI-Key': 'f8d5113bcamsh26f11eb2e8c0ce2p1c5f82jsnf7ff5e14323',
       'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
     };
     const params = {
