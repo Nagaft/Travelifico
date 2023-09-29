@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function () {
-    const searchButton = document.getElementById('holiwis');
+    const searchButton = document.getElementById('searchBtn');
     // if(searchButton){
     //     this.alert("AAAAA");
     //     console.log("aaaaaaaa");
