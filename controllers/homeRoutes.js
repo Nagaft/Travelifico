@@ -8,7 +8,12 @@ const scripts = ['./api/tripadvisor.js'];
 
 
 router.get("/create-account", (req, res) => {
-  res.render("create-account");
+  res.render("create-account", {
+    people: [
+      { name: "alex", edad: 24 },
+      { name: "lalo", edad: 28 }
+    ]
+  });
 });
 
 //profile
