@@ -1,51 +1,4 @@
-    <!--<div class="form-wrapper">
-        <div class="form-side">
-            <a href="#" title="Logo">
-                <img src="" class='logo' alt="Ofin">
-            </a>
-            <form class="my-form" id="my-form" action="/login" method="POST">
-                <div class="form-welcome-row">
-                    <h1>Login to Your Account &#x1F44F;</h1>
-                </div>
-                <div class="text-field">
-                    <label for="email">Email:
-                        <input 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                        placeholder="Your Email" 
-                        autocomplete="off"
-                        required="">
-                    </label>
-                </div>
-                <div class="text-field">
-                    <label for="password">Password:
-                        <input
-                            id="password"
-                            type="password"
-                            name="password"
-                            placeholder="Your Password"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                            required>
-                    </label>
-                </div>
-                <button type="submit" class="my-form__button" id="my-form__button">
-                    Login
-                </button>
-                <div class="my-form__actions">
-                    <a href="/reset-password" title="Forgot Password">
-                        Forgot Password?
-                    </a>
-                </div>
-            </form>
-        </div>
-        <div class="info-side">
-            <img src="../public/assets/mock.png" alt="Mock" class="mockup">
-        </div>
- 
-    <script src="../login.js"></script>-->
-<div class="form-wrapper flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 p-8 md:p-0">
+<div class="form-wrapper flex flex-col md:flex-row bg-gray-100 dark:bg-gray-800 p-8 md:p-0 content-center">
   <div class="form-side flex-1 md:p-8">
     <section class="bg-gray-50 dark:bg-gray-900">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -102,7 +55,7 @@
                 Login
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet? <a href="#" class="text-primary-600 hover:underline dark:text-primary-500">Create Account</a>
+                Don’t have an account yet? <a href="/create-account" class="text-primary-600 hover:underline dark:text-primary-500">Create Account</a>
               </p>
             </form>
             <div class="info-side">
