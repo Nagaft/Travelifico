@@ -1,7 +1,6 @@
  <div class="bg-white rounded-lg shadow-md p-4 m-4">
     <h1 class="text-3xl font-semibold mb-4">TRAVELIFICO APPLICATION</h1>
 
-    <!-- Select City -->
     <div class="mb-4">
         <label for="city" class="block text-lg font-medium mb-2">Select a City:</label>
         <input
@@ -18,7 +17,6 @@
         </select>
     </div>
 
-    <!-- Select Favorite Food -->
     <div class="mb-4">
         <label for="favoriteFood" class="block text-lg font-medium mb-2">Select Favorite Food:</label>
         <select id="favoriteFood" name="favoriteFood" class="border rounded-md py-2 px-3 w-full">
@@ -56,35 +54,25 @@
             <option value="32">Sicilian</option>
             <option value="33">Central-Italian</option>
             <option value="34">Wine Bar</option>
-            <!-- Populate options dynamically based on data -->
             {{#each foodTypes}}
             <option value="{{this}}">{{this}}</option>
             {{/each}}
         </select>
     </div>
-
-    <!-- Search Button -->
-    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full" id ="holiwis">Search</button>
-
+    <button id="searchBtn" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 w-full">Search</button>
     <div class="container mx-auto p-4">
     <ul class="grid grid-cols-4 gap-4" id="restaurantes">
           <li>
             <div class="w-200 h-200 bg-white rounded-lg shadow-md">
-              <!-- Imagen del Restaurante -->
               <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/13/2f/43/rib-eye-black-angus.jpg?w=8600&h=5700&s=1" alt="Imagen del Restaurante 1" class="w-full h-52 object-cover rounded-t-lg">
-              <!-- Componente de Restaurante -->
               <div class="p-4">
-                <!-- Nombre del Restaurante -->
                 <h1 class="text-2xl font-semibold mb-2">Colmillo Masaryk</h1>
-                
-                <!-- Tipos de Comida -->
                 <p class="text-gray-600">Tipos de Comida: <span class="text-black">Bar,Grill,Pub,Wine Bar</span></p>
               </div>
             </div>
           </li>
     </ul>
   </div>
-
 </div>
 
 {{#each scripts}}
