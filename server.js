@@ -3,7 +3,6 @@ const express = require('express');
 const sequelize =require('./config/connection');
 const controllers = require('./controllers');
 const exphbs = require('express-handlebars');
-const userRoutes = require('./controllers/api/userRoutes');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
