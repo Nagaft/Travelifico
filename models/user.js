@@ -1,15 +1,8 @@
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 class User extends Model {
   async comparePassword(password) {
-    // try {
-    //   const isMatch = await bcrypt.compare(password, this.password);
-    //   return isMatch;
-    // } catch (error) {
-    //   console.error('Error comparing passwords:', error);
-    //   throw error;
-    // }
     return bcrypt.compareSync(password, this.password);
   }
 }

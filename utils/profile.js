@@ -1,6 +1,3 @@
-const { use } = require("../controllers");
-const { User } = require("../models");
-
 const userData = {
   email: '',
   phone: '',

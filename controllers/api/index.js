@@ -1,5 +1,5 @@
 const router = require('express').Router();
-router.get('/', async (req, res, next) => {
+router.get('/', async (_, res) => {
     res.render('./views/layouts/main.handlebars', { title: 'Welcome to Travelifico'});
 });
 
