@@ -15,7 +15,7 @@ const db_options = {
 };
 
 const sequelize = process.env.DATABASE_URL
-  ? new Sequelize(process.env.DATABASE_URL, db_options)
+  ? new Sequelize(process.env.DATABASE_URL)
   : new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
