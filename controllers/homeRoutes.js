@@ -6,7 +6,6 @@ const { compare } = require("bcrypt");
 
 const scripts = ['./api/tripadvisor.js'];
 
-
 router.get("/create-account", (req, res) => {
   res.render("create-account");
 });
