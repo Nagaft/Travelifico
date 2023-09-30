@@ -1,13 +1,6 @@
 // connection.js
 const { Sequelize } = require("sequelize");
 
-const env_parse = require('dotenv').config();
-if (env_parse.error) {
-  console.log(env_parse.error);
-} else {
-  console.log(env_parse.parsed)
-}
-
 const db_options = {
   host: process.env.DB_HOST || "localhost",
   dialect: process.env.DB_DIALECT || "mysql",
