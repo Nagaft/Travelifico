@@ -1,10 +1,7 @@
 const router = require("express").Router();
-const session = require("express-session");
 const { User } = require("../models");
 const withAuth = require("../utils/auth");
 const { compare } = require("bcrypt");
-
-const scripts = ['./api/tripadvisor.js'];
 
 router.get("/create-account", (req, res) => {
   res.render("create-account");
@@ -29,29 +26,29 @@ router.get("/", (req, res) => {
 //LOGIN
 router.post("/login", async (req, res) => {
   try {
-    const  userEmail = req.body.email;
-    const  bodypaswd = req.body.password;
-    
+    const userEmail = req.body.email;
+    const bodypaswd = req.body.password;
+
     const user = await User.findOne({ where: { email: userEmail } });
-    if(!user){
-     return res.send('<p>403 No user found</p>');
+    if (!user) {
+      return res.send('<p>403 No user found</p>');
     }
-    const checkPassword = await compare(bodypaswd,user.password);
+    const checkPassword = await compare(bodypaswd, user.password);
     //const tokenSession = await tokenSign(user);
-     if(!checkPassword){
+    if (!checkPassword) {
       res.send('Incorrect Password');
       return;
-     }
-     
+    }
 
-      req.session.save(()=>{
+
+    req.session.save(() => {
       req.session.user_id = user.id;
-     req.session.logged_in = true;      
-     console.log("Session data:", req.session);
+      req.session.logged_in = true;
+      console.log("Session data:", req.session);
 
-        //res.json({ user: user, message: 'You are now logged in!' });
+      //res.json({ user: user, message: 'You are now logged in!' });
       res.redirect('/homepage');
-      });
+    });
 
   } catch (err) {
     res.status(500).json(err);
@@ -59,10 +56,10 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/homepage", withAuth, (req, res) => {
-  res.render("homepage",{
-    layout: 'main', 
-    title:'Travelifico',
-    scripts: scripts
+  res.render("homepage", {
+    layout: 'main',
+    title: 'Travelifico',
+    scripts: ['./api/tripadvisor.js']
   }
   );
 });
