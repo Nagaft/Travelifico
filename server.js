@@ -25,7 +25,6 @@ const sess = {
 
 createDb().then(created => {
   console.log("DBCREATE", created);
-
   sequelize.sync({ alter: true }).then(res => {
 
     console.log("SYNC", res);
