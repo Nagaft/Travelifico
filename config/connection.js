@@ -1,17 +1,21 @@
 // connection.js
-const Sequelize = require("sequelize");
+const { Sequelize } = require("sequelize");
 
-require('dotenv').config();
+const env_parse = require('dotenv').config();
+if (env_parse.error) {
+  console.log(env_parse.error);
+} else {
+  console.log(env_parse.parsed)
+}
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
-  process.env.DATABASE_URL, 
   {
-    host:'localhost',
-    dialect: 'postgres', 
-    port: process.env.DB_PORT || 3306,
+    host: process.env.DB_HOST || "localhost",
+    dialect: process.env.DB_DIALECT || "mysql", 
+    port: process.env.DB_PORT || 3306
   }
 );
 
