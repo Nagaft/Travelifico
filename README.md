@@ -2,8 +2,8 @@
 
 Travelifico is a web application that offers travel enthusiasts a platform to explore, plan, and share their travel experiences. With an intuitive user interface and a rich set of features, Travelifico aims to make travel planning a breeze.
 
-
 ![image](https://github.com/Nagaft/Travelifico/assets/135068393/5e0d83d2-daf9-44e7-824b-ca2d3f16c345)
+![image](https://github.com/Nagaft/Travelifico/assets/135068393/2b28d004-f861-4155-8136-c707584c64a5)
 
 
 ## Installation
